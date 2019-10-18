@@ -1,3 +1,5 @@
 var Module = {};
-importScripts('cv-asm.js');
-importScripts('worker.js');
+Module['onRuntimeInitialized'] = function() {
+  postMessage({msg: 'asm'});
+}
+importScripts('cv-asm.js', 'worker.js');
